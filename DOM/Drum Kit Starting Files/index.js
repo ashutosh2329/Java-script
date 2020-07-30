@@ -3,8 +3,6 @@ for (var i=0;i<document.querySelectorAll(".drum").length;i++){
 }
 
 function gotClicked(){
-	console.log(this.innerHTML);
-	this.style.color = "white";
 	var buttonInnerHtml = this.innerHTML;
 	switch (buttonInnerHtml){
 		case "w":
@@ -35,6 +33,8 @@ function gotClicked(){
 		   var snare = new Audio('sounds/snare.mp3');
            snare.play();
            break;
+        default:
+           console.log(buttonInnerHtml);
       }
       }
       
