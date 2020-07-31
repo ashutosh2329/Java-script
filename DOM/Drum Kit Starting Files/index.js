@@ -4,7 +4,17 @@ for (var i=0;i<document.querySelectorAll(".drum").length;i++){
 
 function gotClicked(){
 	var buttonInnerHtml = this.innerHTML;
-	switch (buttonInnerHtml){
+	checkSound(buttonInnerHtml);
+      }
+
+
+document.addEventListener("keypress",function(event){
+checkSound(event.key);
+});
+
+
+function checkSound(key){
+	switch (key){
 		case "w":
 		   var tom1 = new Audio('sounds/tom-1.mp3');
            tom1.play();
@@ -34,9 +44,10 @@ function gotClicked(){
            snare.play();
            break;
         default:
-           console.log(buttonInnerHtml);
+           console.log(key);
       }
-      }
+
+}
       
       
       
