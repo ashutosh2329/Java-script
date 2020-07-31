@@ -5,11 +5,13 @@ for (var i=0;i<document.querySelectorAll(".drum").length;i++){
 function gotClicked(){
 	var buttonInnerHtml = this.innerHTML;
 	checkSound(buttonInnerHtml);
+	animationCreator(buttonInnerHtml);
       }
 
 
 document.addEventListener("keypress",function(event){
 checkSound(event.key);
+animationCreator(event.key);
 });
 
 
@@ -50,7 +52,14 @@ function checkSound(key){
 }
       
       
-      
+
+function animationCreator(exactKey){
+	var activeButton = document.querySelector("." + exactKey);
+	activeButton.classList.add("pressed");
+	setTimeout(function(){
+		activeButton.classList.remove("pressed");
+	}, 200);
+}
       
 	
 	
